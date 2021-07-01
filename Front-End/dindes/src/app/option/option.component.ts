@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-option',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
 
-  ngOnInit(): void {
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+    window.scroll(0, 0);
   }
+
+  dinde(){
+    this.user.tipo = "dinde"
+    this.router.navigate(['/cadastrar'])
+  }
+
+  apadrinhade(){
+    this.user.tipo = "apadrinhade"
+    this.router.navigate(['/cadastrar'])
+  }
+
+
+
 
 }
