@@ -4,13 +4,13 @@
     <!-- foto e nome da pessoa -->
 
     <img
-      src="https://img.cancaonova.com/cnimages/canais/uploads/sites/6/2018/03/formacao_1600x1200-como-a-presenca-da-mulher-pode-ser-harmonia-no-mundo.jpg"
+      src="{{foto}}"
       alt=""
       width="50px"
       height="50px"
       class="img-fluid rounded-circle mx-2"
     />
-    <a class="navbar-brand border-end border-light pe-3" href="#"> Nome </a>
+    <a class="navbar-brand border-end border-light pe-3" href="#"> {{nome}} </a>
 
     <!-- botão de  responsividade -->
     <button
@@ -66,7 +66,7 @@
           aria-label="Search"
         />
       </form>
-      <a routerLink="/entrar" class="sair"><i class="fa fa-sign-out fs-3 ms-3" aria-hidden="true"></i></a>
+      <a (click)='sair()' class="sair"><i class="fa fa-sign-out fs-3 ms-3" aria-hidden="true"></i></a>
     </div>
   </div>
 </nav>

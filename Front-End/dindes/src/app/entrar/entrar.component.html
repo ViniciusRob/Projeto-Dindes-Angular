@@ -10,13 +10,13 @@
                 <form>
                     <div class="mb-3">
                       <label for="usuario" class="form-label font">Usuário</label>
-                      <input type="text" class="form-control" id="usuario" aria-describedby="usuarioHelp" placeholder="Digite seu usuário">
+                      <input [(ngModel)]= 'userLogin.usuario' type="text" class="form-control" id="usuario" aria-describedby="usuarioHelp" placeholder="Digite seu usuário" name="usuario">
                     </div>
                     <div class="mb-3">
                       <label for="senha" class="form-label font">Senha </label>
-                      <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                      <input [(ngModel)]='userLogin.senha' type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
                     </div>
-                    <button type="submit" class="btn btn-outline-light" routerLink='/home'>Entrar</button>
+                    <button type="submit" class="btn btn-outline-light" (click)='entrar()'>Entrar</button>
                   </form>
                   <hr>
                   <p class="font2 mb-0"> Não possui uma conta? <a routerLink='/option' class="font2 hover text-decoration-none"> Cadastre-se </a> </p>

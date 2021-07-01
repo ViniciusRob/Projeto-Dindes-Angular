@@ -10,4 +10,5 @@ export class UserLogin{
     public sobre: string
     public foto: string
     public tipo: string
+    public token: string
 }
