@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 
@@ -22,12 +23,13 @@ export class OptionComponent implements OnInit {
   }
 
   dinde(){
-    this.user.tipo = "dinde"
+    environment.tipo = "dinde"
+
     this.router.navigate(['/cadastrar'])
   }
 
   apadrinhade(){
-    this.user.tipo = "apadrinhade"
+    environment.tipo = "apadrinhade"
     this.router.navigate(['/cadastrar'])
   }
 

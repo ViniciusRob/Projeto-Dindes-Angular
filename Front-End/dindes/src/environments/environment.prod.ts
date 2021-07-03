@@ -7,5 +7,6 @@ export const environment = {
   email: '',
   dataNascimento: '',
   area: '',
-  telefone: ''
+  telefone: '',
+  tipo: ''
 };
