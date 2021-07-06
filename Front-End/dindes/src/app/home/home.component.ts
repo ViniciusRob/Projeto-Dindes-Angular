@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
 
   foto = environment.foto
   nome = environment.nome
+  area = environment.area
+  //dinde = environment.dinde
 
   constructor(
     private router: Router

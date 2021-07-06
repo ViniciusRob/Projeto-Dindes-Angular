@@ -1,3 +1,5 @@
+import { User } from "./User"
+
 export class UserLogin{
     public id: number
     public nome: string
@@ -10,5 +12,6 @@ export class UserLogin{
     public sobre: string
     public foto: string
     public tipo: string
+    //public dinde: User
     public token: string
 }

@@ -8,5 +8,6 @@ export const environment = {
   dataNascimento: '',
   area: '',
   telefone: '',
-  tipo: ''
+  tipo: '',
+  //dinde: ''
 };
