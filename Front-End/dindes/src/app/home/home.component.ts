@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { AuthService } from '../service/auth.service';
+import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -15,6 +17,9 @@ export class HomeComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
 
+  postagem: Postagem = new Postagem()
+  listaPostagem: Postagem[]
+
 
   foto = environment.foto
   nome = environment.nome
@@ -23,7 +28,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private postagemService: PostagemService
   ) { }
 
   ngOnInit() {
@@ -35,7 +41,12 @@ export class HomeComponent implements OnInit {
     }
 
     this.temaService.refreshToken()
+
+    this.findAllTemas()
+    // this.findAllPostagem()
   }
+
+  // metodos de tema
 
   findAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[]) =>{
@@ -49,6 +60,44 @@ export class HomeComponent implements OnInit {
       alert('Tema cadastrado com sucesso')
       this.findAllTemas()
       this.tema = new Tema()
+    })
+  }
+
+  // metodos de postagem
+
+  temaPostagem(event: any){
+    this.postagem.tema = event.target.value;
+  }
+
+  tipoPostagem(event: any){
+    if(event.target.value=="postagem"){
+      let vaga = false;
+      this.postagem.vaga = vaga;
+    } else if(event.target.value=="vaga"){
+      let vaga = true;
+      this.postagem.vaga = vaga;
+    }
+
+    
+  }
+
+  midia(event: any){
+    this.postagem.midia = event.target.value
+
+  }
+
+  findAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) =>{
+      this.listaPostagem = resp
+    })
+  }
+
+  cadastrarPostagem(){
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{
+      this.postagem = resp
+      alert('Postagem feita com sucesso!')
+      this.findAllPostagem()
+      this.postagem = new  Postagem()
     })
   }
 

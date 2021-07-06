@@ -5,7 +5,7 @@ export class Postagem{
     public id: number
     public texto: string
     public curtida: number
-    public media: string
+    public midia: string
     public vaga: boolean
     public tituloVaga: string
     public data: Date
