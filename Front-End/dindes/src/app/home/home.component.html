@@ -130,7 +130,7 @@
   </div>
 </div>
 
-<!-- Modal  de tema-->
+<!-- Modal de tema-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -141,20 +141,20 @@
       <div class="modal-body">
         <div class="form-group mt-2">
           <label for="nome" class="form-label font"> Nome: </label>
-          <input  type="text" class="form-control" id='nome' placeholder="Digite o nome do tema">
+          <input [(ngModel)]='tema.nomeTema' type="text" class="form-control" id='nome' placeholder="Digite o nome do tema">
       </div>
       <div class="form-group mt-2">
         <label for="área" class="form-label font"> Área: </label>
-        <input  type="text" class="form-control" id='area' placeholder="Digite a área do tema">
+        <input [(ngModel)]='tema.area' type="text" class="form-control" id='area' placeholder="Digite a área do tema">
     </div>
     <div class="form-group mt-2">
       <label for="descricaoTema" class="form-label font"> Descrição: </label>
-      <input  type="text" class="form-control" id='descricaoTema' placeholder="Digite a descricao do tema">
+      <input [(ngModel)]='tema.descricao' type="text" class="form-control" id='descricaoTema' placeholder="Digite a descricao do tema">
     </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success"> Salvar </button>
+        <button type="button" class="btn btn-success" (click)='cadastrarTema()' > Salvar </button>
       </div>
     </div>
   </div>
