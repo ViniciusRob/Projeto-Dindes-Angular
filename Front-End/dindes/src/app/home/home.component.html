@@ -2,40 +2,56 @@
   <div class="col-12 d-flex justify-content-center">
     <!-- card com perfil e dinde -->
     <div class="col-3 my-3 p-0 mx-0">
-      <div class="card py-2 px-3 border-dark bratius" style="width: 18rem">
-        <img
-          src="{{foto}}"
-          class="card-img-top imgbratius"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">{{nome}}</h5>
-          <p class="card-text">{{area}}</p>
+      <div class="row">
+        <div class="card py-2 px-3 border-dark bratius" style="width: 18rem">
+          <img src="{{ foto }}" class="card-img-top imgbratius" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ nome }}</h5>
+            <p class="card-text">{{ area }}</p>
 
-   
-          <h5 class="card-title text-center bordas">Minhe dinde</h5>
-        
+            <h5 class="card-title text-center bordas">Minhe dinde</h5>
 
-          <div class="row d-flex align-items-center">
-            <div class="col-md-6">
-              <img
-                src="https://midias.correiobraziliense.com.br/_midias/jpg/2021/03/05/675x450/1_cbpfot020320212188-6556336.jpg"
-                alt=""
-                class="img-fluid rounded-circle fotodinde"
-              />
+            <div class="row d-flex align-items-center">
+              <div class="col-md-6">
+                <img
+                  src="https://midias.correiobraziliense.com.br/_midias/jpg/2021/03/05/675x450/1_cbpfot020320212188-6556336.jpg"
+                  alt=""
+                  class="img-fluid rounded-circle fotodinde"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <p class="font">Nome da silva sauro pereira souza</p>
+              </div>
             </div>
 
-            <div class="col-md-6">
-              <p class="font">Nome da silva sauro pereira souza</p>
-            </div>
+            <p class="m-2">Descrição/Cargo.</p>
           </div>
-
-          <p class="m-2">Descrição/Cargo.</p>
         </div>
       </div>
-    </div>
+       <!-- /card com perfil e dinde -->
 
-    <!-- /card com perfil e dinde -->
+       <!-- card com temas -->
+
+      <div class="row">
+        <div class="card py-2 px-3 border-dark bratius mt-3" style="width: 18rem">
+          <div class="card-body">
+            <div class="row">
+              This is some text within a card body.
+            </div>
+            <div class="row d-flex justify-content-center">
+              <button type="button" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Novo tema
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /card com temas  -->
+
+
+    </div>
 
     <div class="col-8 my-3 pe-3 mx-0">
       <!-- lugar onde posta  -->
@@ -110,6 +126,36 @@
       </div>
 
       <!-- postagem -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal  de tema-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Novo Tema</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group mt-2">
+          <label for="nome" class="form-label font"> Nome: </label>
+          <input  type="text" class="form-control" id='nome' placeholder="Digite o nome do tema">
+      </div>
+      <div class="form-group mt-2">
+        <label for="área" class="form-label font"> Área: </label>
+        <input  type="text" class="form-control" id='area' placeholder="Digite a área do tema">
+    </div>
+    <div class="form-group mt-2">
+      <label for="descricaoTema" class="form-label font"> Descrição: </label>
+      <input  type="text" class="form-control" id='descricaoTema' placeholder="Digite a descricao do tema">
+    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success"> Salvar </button>
+      </div>
     </div>
   </div>
 </div>
