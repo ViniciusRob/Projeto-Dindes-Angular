@@ -31,6 +31,11 @@
     width: 100%;
   }
 
+  .fundorosa{
+    background-color: rgba(250, 9, 129, 0.15);  
+    backdrop-filter: blur(5px);
+  }
+
   .bordas{
       padding: 5px 0;
       border-top: 1px solid black;

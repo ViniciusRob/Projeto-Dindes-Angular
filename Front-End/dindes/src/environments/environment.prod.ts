@@ -9,5 +9,7 @@ export const environment = {
   area: '',
   telefone: '',
   tipo: '',
+  usuario: '',
+  sobre: '',
   //dinde: ''
 };

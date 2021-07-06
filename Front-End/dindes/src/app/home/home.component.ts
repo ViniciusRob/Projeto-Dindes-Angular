@@ -41,9 +41,11 @@ export class HomeComponent implements OnInit {
     }
 
     this.temaService.refreshToken()
+    this.postagemService.refreshToken()
 
     this.findAllTemas()
-    // this.findAllPostagem()
+    this.findAllPostagem()
+    console.log(environment)
   }
 
   // metodos de tema

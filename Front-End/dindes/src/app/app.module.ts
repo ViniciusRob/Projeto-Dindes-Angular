@@ -13,6 +13,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { HomeComponent } from './home/home.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { FormsModule } from '@angular/forms';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     OptionComponent,
     CadastrarComponent,
     HomeComponent,
-    SobreComponent
+    SobreComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

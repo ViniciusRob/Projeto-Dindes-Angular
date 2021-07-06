@@ -17,6 +17,12 @@ export class PostagemService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  refreshToken(){
+    this.token= {
+      headers: new HttpHeaders().set('Authorization', environment.token) 
+    }
+  }
+
 
   // buscar todos os temas
   getAllPostagem(): Observable<Postagem[]>{

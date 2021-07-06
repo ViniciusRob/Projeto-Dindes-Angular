@@ -3,7 +3,7 @@
     <!-- card com perfil e dinde -->
     <div class="col-3 my-3 p-0 mx-0">
       <div class="row">
-        <div class="card py-2 px-3 border-dark bratius" style="width: 18rem">
+        <div class="card py-2 px-3 border-dark bratius fundorosa" style="width: 18rem">
           <img src="{{ foto }}" class="card-img-top imgbratius" alt="..." />
           <div class="card-body">
             <h5 class="card-title">{{ nome }}</h5>
@@ -35,7 +35,7 @@
 
       <div class="row">
         <div
-          class="card py-2 px-3 border-dark bratius mt-3"
+          class="card py-2 px-3 border-dark bratius mt-3 fundorosa"
           style="width: 18rem"
         >
           <div class="card-body">
@@ -87,20 +87,20 @@
                 >
                   Inserir mídia
                 </button>
-                <!-- <div class="form-check form-check-inline">
-                  <input  [(ngModel)]="postagem.vaga" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="false">
+                <div class="form-check form-check-inline">
+                  <input  (input)="tipoPostagem($event)" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="postagem">
                   <label class="form-check-label" for="inlineRadio1">Postagem</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input [(ngModel)]="postagem.vaga" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true">
+                  <input (input)="tipoPostagem($event)" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="vaga">
                   <label class="form-check-label" for="inlineRadio2">Vaga</label>
-                </div> -->
+                </div>
 
-                <select (change)="tipoPostagem($event)" class="form-select me-4" aria-label="Default select example">
+                <!-- <select (change)="tipoPostagem($event)" class="form-select me-4" aria-label="Default select example">
                   <option selected > Tipo de postagem </option>
                   <option  value="postagem">Postagem</option>
                   <option  value="vaga">Vaga</option>
-                </select>
+                </select> -->
 
               </div>
               <div class="col d-flex justify-content-end">
@@ -119,45 +119,28 @@
       <!-- /lugar onde posta -->
 
       <!-- postagens -->
-
+      <div *ngFor="let post of listaPostagem">
       <div class="row">
         <div class="card w-100 p-3 mt-2">
           <a href="#" class="card-link p-3 text-decoration-none green">
             <h5>Quem Postou</h5>
           </a>
-          <img
-            src="https://abstartups.com.br/wp-content/uploads/2018/10/Qual-a-tecnologia.jpg"
-            class="card-img-top"
-            alt="..."
-          />
+          <h6 class="ps-3 mb-3">Tema</h6>
           <div class="card-body">
-            <h5 class="card-title">Isso é uma postagem</h5>
+            <!-- <h5 class="card-title">Isso é uma postagem</h5> -->
             <p class="card-text">
-              Aqui vai o texto da postagem, as pessoas podem postar o que
-              quiserem aqui.
+              {{post.texto}}
             </p>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="card w-100 p-3 mt-2">
-          <a href="#" class="card-link p-3 text-decoration-none green">
-            <h5>Quem Postou</h5>
-          </a>
           <img
-            src="https://blog.bigmidia.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2021/02/materia-esporte-amador.png.webp"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Isso é uma segunda postagem</h5>
-            <p class="card-text">
-              Aqui vai o texto da postagem, as pessoas podem postar o que
-              quiserem aqui.
-            </p>
-          </div>
+          src="{{post.midia}}"
+          class="card-img-bottom"
+          alt="..."
+        />
         </div>
       </div>
+    </div>
+      
 
       <!-- postagem -->
     </div>
