@@ -18,7 +18,7 @@
                 </p>
                 <p class="card-text">Telefone: {{ telefone }}</p>
                 <p class="card-text">Email: {{ email }}</p>
-                <button type="button" class="btn btn-success mt-2">
+                <button type="button" class="btn btn-success mt-2"  [routerLink]="['/usuario-edit', id]" >
                   Editar perfil
                 </button>
               </div>
