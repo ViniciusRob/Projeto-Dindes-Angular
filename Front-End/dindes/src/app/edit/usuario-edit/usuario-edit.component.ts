@@ -29,6 +29,7 @@ export class UsuarioEditComponent implements OnInit {
 
     this.idUser = this.route.snapshot.params['id'];
     this.findByIdUser(this.idUser);
+    console.log(this.user)
   }
 
   findByIdUser(id: number){
@@ -42,6 +43,7 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   alterarUser(){
+
     this.user.tipo = environment.tipo
 
     if (this.user.senha != this.confirmarSenha) {
@@ -54,6 +56,7 @@ export class UsuarioEditComponent implements OnInit {
         environment.foto = '';
         environment.id = 0;
         environment.nome = '';
+        console.log(this.user)
         // this.router.navigate(['/entrar']);
       });
     }

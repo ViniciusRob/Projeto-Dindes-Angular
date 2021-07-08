@@ -41,39 +41,39 @@ export class PerfilComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
-    this.idUser = this.user.id
-    this.findByIdUser(this.idUser)
+    // this.idUser = this.user.id
+    // this.findByIdUser(this.idUser)
 
-    console.log(this.user)
+    // console.log(this.user)
   }
 
-  findByIdUser(id: number){
-    this.authService.getByIdUser(id).subscribe((resp: User) => {
-      this.user = resp
-    })
-  }
+  // findByIdUser(id: number){
+  //   this.authService.getByIdUser(id).subscribe((resp: User) => {
+  //     this.user = resp
+  //   })
+  // }
 
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value;
   }
 
-  alterarUser(){
-    this.user.tipo = environment.tipo
+  // alterarUser(){
+  //   this.user.tipo = environment.tipo
   
 
-    if (this.user.senha != this.confirmarSenha) {
-      alert('As senhas não coincidem');
-    } else {
-      this.authService.cadastrar(this.user).subscribe((resp: User) => {
-        this.user = resp;
-        alert('Usuário atualizado com sucesso. Faça o login novamente');
-        environment.token = '';
-        environment.foto = '';
-        environment.id = 0;
-        environment.nome = '';
-        this.router.navigate(['/entrar']);
-      });
-    }
-  }
+  //   if (this.user.senha != this.confirmarSenha) {
+  //     alert('As senhas não coincidem');
+  //   } else {
+  //     this.authService.cadastrar(this.user).subscribe((resp: User) => {
+  //       this.user = resp;
+  //       alert('Usuário atualizado com sucesso. Faça o login novamente');
+  //       environment.token = '';
+  //       environment.foto = '';
+  //       environment.id = 0;
+  //       environment.nome = '';
+  //       this.router.navigate(['/entrar']);
+  //     });
+  //   }
+  // }
 
 }
