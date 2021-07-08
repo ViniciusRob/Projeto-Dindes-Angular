@@ -37,4 +37,14 @@ export class TemaService {
     return this.http.post<Tema>('https://dindes.herokuapp.com/temas', tema, this.token)
   }
 
+  // editar tema
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>('https://dindes.herokuapp.com/temas', tema, this.token)
+  }
+
+  // deletar tema
+  deleteTema(id: number){
+    return this.http.delete(`https://dindes.herokuapp.com/temas/${id}`, this.token)
+  }
+
 }

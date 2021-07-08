@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { FormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delet/tema-delete/tema-delete.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     CadastrarComponent,
     HomeComponent,
     SobreComponent,
-    PerfilComponent
+    PerfilComponent,
+    TemaEditComponent,
+    TemaDeleteComponent
   ],
   imports: [
     BrowserModule,
