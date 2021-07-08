@@ -2,36 +2,23 @@
   <div class="col-11 d-flex flex-column justify-content-center">
     <div class="row mb-3">
       <div class="card bratius border-dark" style="width: 100%">
-        <img
-          src="../../assets/capa2.gif"
-          class="card-img-top bratius mt-2 capa"
-          alt="..."
-        />
+        <img src="../../assets/capa2.gif" class="card-img-top bratius mt-2 capa" alt="..." />
         <div class="card-body">
           <div class="row g-0 d-flex align-items-center">
             <div class="col-md-4">
-              <!-- <img
-                src="{{ foto }}"
-                class="img-fluid imgbratius mb-2"
-                alt="..."
-              /> -->
+              <img src="{{ foto }}" class="img-fluid imgbratius mb-2" alt="..." />
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <!-- <h3 class="card-title text-center">{{ nome }}</h3>
+                <h3 class="card-title text-center">{{ nome }}</h3>
                 <p class="card-text">Área: {{ area }}</p>
                 <p class="card-text">Nome de usuário: {{ usuario }}</p>
                 <p class="card-text">
                   Data de Nascimento: {{ dataNasc | date: "dd/MM/yyyy" }}
                 </p>
                 <p class="card-text">Telefone: {{ telefone }}</p>
-                <p class="card-text">Email: {{ email }}</p> -->
-                <button
-                  type="button"
-                  class="btn btn-success mt-2"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
+                <p class="card-text">Email: {{ email }}</p>
+                <button type="button" class="btn btn-success mt-2">
                   Editar perfil
                 </button>
               </div>
@@ -44,129 +31,8 @@
       <div class="card mb-3 py-2 px-3 border-dark bratius" style="width: 100%">
         <div class="card-body">
           <h4>Sobre</h4>
-          <!-- <p class="card-text">{{ sobre }}</p> -->
+          <p class="card-text">{{ sobre }}</p>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Atualizar Perfil</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="descricao"> Nome </label>
-          <input
-            type="text"
-            class="form-control mt-2"
-            name="nome"
-            id="nome"
-            [(ngModel)]="user.nome"
-          />
-        </div>
-        <!-- <div class="form-group">
-          <label for="descricao"> Nome de usuário </label>
-          <input
-            type="text"
-            class="form-control mt-2"
-            name="usuario"
-            id="usuario"
-            [(ngModel)]="user.usuario"
-          />
-        </div> -->
-        <div class="form-group">
-          <label for="descricao"> Email </label>
-          <input
-            type="text"
-            class="form-control mt-2"
-            name="email"
-            id="email"
-            [(ngModel)]="user.email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="descricao"> Data de Nascimento </label>
-          <input
-            type="text"
-            class="form-control mt-2"
-            name="dataNasci"
-            id="dataNasci"
-            [(ngModel)]="user.dataNascimento"
-          />
-        </div>
-        <div class="form-group">
-          <label for="descricao"> Telefone </label>
-          <input
-            type="text"
-            class="form-control mt-2"
-            name="telefone"
-            id="telefone"
-            [(ngModel)]="user.telefone"
-          />
-        </div>
-        <div class="form-group">
-          <label for="descricao"> Área: </label>
-          <input
-            type="text"
-            class="form-control mt-2"
-            name="area"
-            id="area"
-            [(ngModel)]="user.area"
-          />
-        </div>
-        <div class="form-group">
-          <label for="descricao"> Link da foto: </label>
-          <input
-            type="text"
-            class="form-control mt-2"
-            name="foto"
-            id="foto"
-            [(ngModel)]="user.foto"
-          />
-        </div>
-        <div class="form-group">
-          <label for="descricao"> Senha: </label>
-          <input
-            type="password"
-            class="form-control mt-2"
-            name="senha"
-            id="senha"
-            (input)='confirmSenha($event)'
-          />
-        </div>
-        <div class="form-group">
-          <label for="descricao"> Confirmar Senha: </label>
-          <input
-            type="password"
-            class="form-control mt-2"
-            name="confirMsenha"
-            id="confirmSenha"
-            [(ngModel)]="user.senha"
-          />
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
-        <button type="button" class="btn btn-primary" (click)='alterarUser()' data-bs-dismiss="modal"> Atualizar </button>
       </div>
     </div>
   </div>

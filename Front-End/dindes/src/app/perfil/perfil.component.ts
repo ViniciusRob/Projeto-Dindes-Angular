@@ -13,15 +13,15 @@ import { AuthService } from '../service/auth.service';
 })
 export class PerfilComponent implements OnInit {
 
-  // foto = environment.foto
-  // nome = environment.nome
-  // dataNasc = environment.dataNascimento
-  // area = environment.area
-  // telefone = environment.telefone
-  // email = environment.email
-  // sobre = environment.sobre
-  // usuario = environment.usuario
-  // id = environment.id
+  foto = environment.foto
+  nome = environment.nome
+  dataNasc = environment.dataNascimento
+  area = environment.area
+  telefone = environment.telefone
+  email = environment.email
+  sobre = environment.sobre
+  usuario = environment.usuario
+  id = environment.id
   
   user: User = new User()
   confirmarSenha: string;
