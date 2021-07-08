@@ -29,9 +29,24 @@ export class PostagemService {
     return this.http.get<Postagem[]>('https://dindes.herokuapp.com/postagens', this.token)
   }
 
+  //Pesquisar por Id
+  getByIdPostagem(id: number):Observable<Postagem>{
+    return this.http.get<Postagem>(`https://dindes.herokuapp.com/postagens/${id}`, this.token)
+  }
+
   // postar um novo tema
   postPostagem(postagem: Postagem): Observable<Postagem>{
     return this.http.post<Postagem>('https://dindes.herokuapp.com/postagens', postagem, this.token)
+  }
+
+  // Editar a postagem
+  putPostagem(postagem: Postagem): Observable<Postagem>{
+    return this.http.put<Postagem>('https://dindes.herokuapp.com/postagens', postagem, this.token)
+  }
+
+  // deletar tema
+  deletePostagem(id: number){
+    return this.http.delete(`https://dindes.herokuapp.com/postagens/${id}`, this.token)
   }
 
 

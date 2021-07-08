@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { PostagemDeleteComponent } from './delet/postagem-delete/postagem-delete.component';
 import { TemaDeleteComponent } from './delet/tema-delete/tema-delete.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { HomeComponent } from './home/home.component';
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path: 'sobre', component: SobreComponent},
   {path: 'perfil', component: PerfilComponent},
   {path: 'tema-edit/:id', component: TemaEditComponent},
-  {path: 'tema-delet/:id', component: TemaDeleteComponent}
+  {path: 'tema-delet/:id', component: TemaDeleteComponent},
+  {path: 'postagem-delet/:id', component: PostagemDeleteComponent},
+  {path: 'postagem-edit/:id', component: PostagemEditComponent}
 
 ];
 

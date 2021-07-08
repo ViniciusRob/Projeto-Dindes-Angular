@@ -139,8 +139,8 @@
           class="card-img-bottom"
           alt="..."
         />
-        <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-        <a href=""><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+        <a [routerLink]="['/postagem-edit', post.id]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+        <a [routerLink]="['/postagem-delet', post.id]"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i></a>
         </div>
       </div>
