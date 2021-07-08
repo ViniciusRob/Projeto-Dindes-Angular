@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -16,9 +17,13 @@ export class HomeComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
+  idTema: number
 
   postagem: Postagem = new Postagem()
   listaPostagem: Postagem[]
+
+  user: User = new User()
+  idUser = environment.id
 
 
   foto = environment.foto
@@ -29,7 +34,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private temaService: TemaService,
-    private postagemService: PostagemService
+    private postagemService: PostagemService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -45,7 +51,6 @@ export class HomeComponent implements OnInit {
 
     this.findAllTemas()
     this.findAllPostagem()
-    console.log(environment)
   }
 
   // metodos de tema
@@ -67,8 +72,27 @@ export class HomeComponent implements OnInit {
 
   // metodos de postagem
 
-  temaPostagem(event: any){
-    this.postagem.tema = event.target.value;
+  // temaPostagem(event: any){
+  //   this.postagem.tema = event.target.value;
+  // }
+
+  findByIdTema(){
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) =>{
+      this.tema = resp
+      console.log(this.tema)
+    })
+  }
+
+  findAllPostagem(){
+    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) =>{
+      this.listaPostagem = resp
+    })
+  }
+
+  findByIdUser(){
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) =>{
+      this.user = resp
+    })
   }
 
   tipoPostagem(event: any){
@@ -88,18 +112,20 @@ export class HomeComponent implements OnInit {
 
   }
 
-  findAllPostagem(){
-    this.postagemService.getAllPostagem().subscribe((resp: Postagem[]) =>{
-      this.listaPostagem = resp
-    })
-  }
+  
 
   cadastrarPostagem(){
+   this.tema.id = this.idTema
+   this.postagem.tema = this.tema
+
+    this.user.id = this.idUser
+    this.postagem.usuario = this.user
+
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{
       this.postagem = resp
       alert('Postagem feita com sucesso!')
       this.findAllPostagem()
-      this.postagem = new  Postagem()
+      this.postagem = new Postagem()
     })
   }
 
