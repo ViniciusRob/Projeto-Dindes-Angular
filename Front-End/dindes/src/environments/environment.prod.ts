@@ -5,7 +5,6 @@ export const environment = {
   id: 0,
   foto: '',
   email: '',
-  dataNascimento: '',
   area: '',
   telefone: '',
   tipo: '',

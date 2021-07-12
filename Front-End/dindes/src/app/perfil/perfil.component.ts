@@ -15,7 +15,6 @@ export class PerfilComponent implements OnInit {
 
   foto = environment.foto
   nome = environment.nome
-  dataNasc = environment.dataNascimento
   area = environment.area
   telefone = environment.telefone
   email = environment.email

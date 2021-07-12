@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { OptionComponent } from './option/option.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { TemasComponent } from './temas/temas.component';
+import { VagasComponent } from './vagas/vagas.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'entrar', pathMatch: 'full'},
@@ -24,7 +26,9 @@ const routes: Routes = [
   {path: 'tema-delet/:id', component: TemaDeleteComponent},
   {path: 'postagem-delet/:id', component: PostagemDeleteComponent},
   {path: 'postagem-edit/:id', component: PostagemEditComponent},
-  {path: 'usuario-edit/:id', component: UsuarioEditComponent}
+  {path: 'usuario-edit/:id', component: UsuarioEditComponent},
+  {path: 'temas', component: TemasComponent},
+  {path: 'vagas', component: VagasComponent}
 
 ];
 

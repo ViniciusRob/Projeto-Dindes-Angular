@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { AlertaServiceService } from '../service/alerta-service.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -35,7 +36,8 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private postagemService: PostagemService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertaService: AlertaServiceService
   ) { }
 
   ngOnInit() {
@@ -64,7 +66,7 @@ export class HomeComponent implements OnInit {
   cadastrarTema(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema) =>{ 
       this.tema = resp
-      alert('Tema cadastrado com sucesso')
+      this.alertaService.showAlertSuccess('Tema cadastrado com sucesso')
       this.findAllTemas()
       this.tema = new Tema()
     })
@@ -123,7 +125,7 @@ export class HomeComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) =>{
       this.postagem = resp
-      alert('Postagem feita com sucesso!')
+      this.alertaService.showAlertDanger('Postagem feita com sucesso!')
       this.findAllPostagem()
       this.postagem = new Postagem()
     })

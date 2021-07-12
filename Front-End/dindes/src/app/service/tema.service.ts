@@ -32,6 +32,13 @@ export class TemaService {
     return this.http.get<Tema>(`https://dindes.herokuapp.com/temas/${id}`, this.token)
   }
 
+
+  // Pesquisar por nome
+  getByNomeTema(nomeTema: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://dindes.herokuapp.com/temas/nomeTema/${nomeTema}`, this.token)
+  }
+
+
   //Inserir um novo tema
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://dindes.herokuapp.com/temas', tema, this.token)

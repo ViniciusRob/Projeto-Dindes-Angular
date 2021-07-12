@@ -49,7 +49,7 @@ export class UsuarioEditComponent implements OnInit {
     if (this.user.senha != this.confirmarSenha) {
       alert('As senhas não coincidem');
     } else {
-      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+      this.authService.putUsuario(this.user).subscribe((resp: User) => {
         this.user = resp;
         alert('Usuário atualizado com sucesso. Faça o login novamente');
         environment.token = '';
@@ -57,7 +57,7 @@ export class UsuarioEditComponent implements OnInit {
         environment.id = 0;
         environment.nome = '';
         console.log(this.user)
-        // this.router.navigate(['/entrar']);
+        this.router.navigate(['/entrar']);
       });
     }
   }

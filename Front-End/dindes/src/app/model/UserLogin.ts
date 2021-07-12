@@ -6,7 +6,7 @@ export class UserLogin{
     public usuario: string
     public email: string
     public senha: string
-    public dataNascimento: string
+    public dataNascimento: Date
     public area: string
     public telefone: string
     public sobre: string

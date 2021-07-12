@@ -13,9 +13,9 @@
                 <h3 class="card-title text-center">{{ nome }}</h3>
                 <p class="card-text">Área: {{ area }}</p>
                 <p class="card-text">Nome de usuário: {{ usuario }}</p>
-                <p class="card-text">
-                  Data de Nascimento: {{ dataNasc | date: "dd/MM/yyyy" }}
-                </p>
+                <!-- <p class="card-text">
+                  Data de Nascimento: {{ user.dataNascimento }}
+                </p> -->
                 <p class="card-text">Telefone: {{ telefone }}</p>
                 <p class="card-text">Email: {{ email }}</p>
                 <a  class="btn btn-success mt-2"  [routerLink]="['/usuario-edit', id]" >
